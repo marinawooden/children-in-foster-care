@@ -1,0 +1,112 @@
+---
+title: "Native American Children in Foster Care in Clark County (2019)"
+author: "Marina Wooden"
+output: html_document
+---
+
+<link rel="stylesheet" type="text/css" href="fonts/stylesheet.css">
+
+```{r setup, include=FALSE}
+library(knitr)
+source_dir <- source("native.R")
+```
+
+**Question asked:** What are the outcome differences for Native American children in foster care in Clark County?  To answer this, four criteria were examined: number of removals, number of placements, frequency of returning to foster care, and length of stay in foster care.
+
+## About the Sample
+
+The data used was provided by the National Data Archive on Child Abuse and Neglect at Cornell University.  In 2019, Clark county had **`r total_kids`** kids in foster care, if whom **`r native_kids`** were Native American, and **`r non_native_kids`** were not.  This includes all children who were ever in any out of home placement in 2019.  Time spent in foster care includes all time out of home for each child, including previous years in care.
+
+## Number Of Placements
+<p id="num_pleps_text">
+Native American children were found to have a higher number of placements than non-Native children, on average about **`r avg_num_plep[1, num_pleps]`** placements, while non-Native children had closer to **`r avg_num_plep[2, num_pleps]`**.
+</p>
+
+<div class="chart">
+```{r echo = FALSE, message=FALSE}
+num_pleps_viz
+```
+</div>
+
+## Frequency of Repetition
+
+<p id="reps_text">
+Native American children more often go back into foster care after finding a placement than non-Native children.  30.3% of all Native American children in foster care in 2019 had had a previous case, while only 14.4% of all non-Native American children in foster care in 2019 had had a previous case,
+</p>
+
+<div class="chart">
+```{r echo = FALSE, message=FALSE}
+repeater_viz
+```
+</div>
+
+## Number Of Removals
+
+<p id="num_rems_text">
+As it turns out, Native American children have a slightly higher average number of removals.  On average, Native American children have about **`r avg_rems[1, num_rems]`** removals, while non-Native children have only about **`r avg_rems[2, num_rems]`**.
+</p>
+
+<div class="chart">
+```{r numrems, echo = FALSE, message=FALSE}
+num_rems_viz
+```
+</div>
+
+## Length of Stay in Foster Care
+
+<p id="lifeLOS_text">
+Native American children also spend longer in foster care.  In 2019, the average stay for a non-Native American child in foster care was **`r avg_LifeLOS[2, 2]`** days, or about 2 years and 4 months.  Native American children, however, spend about **`r avg_LifeLOS[1, 2]`**. days, which is about 2 years and 8 months - about 4 months longer than non-Native children.
+</p>
+
+<div class="chart">
+```{r echo = FALSE, message=FALSE}
+LifeLOS_viz
+```
+</div>
+
+<hr>
+
+<small>
+  Children's Bureau, Administration on Children, Youth And Families, Administration For Children And Families, U. S. Department Of Health And Human Services (2020). Adoption and Foster Care Analysis and Reporting System (AFCARS), Foster Care File 2019 [Dataset]. National Data Archive on Child Abuse and Neglect.
+  
+  _The receiver of the original data, the funder, the Archive, Cornell University and their agents or employees bear no responsibility for the analyses or interpretations presented here._
+</small>
+
+```{css, echo=FALSE}
+body {
+  color: #ff9770;
+  background-color: #ffefc1;
+}
+h1, h2 {
+  font-family: 'alte_haas_groteskbold';
+}
+
+h1 {
+  color: #ff733f;
+}
+
+h2 {
+  color: #ff8350;
+}
+
+p, .js-plotly-plot .plotly, .js-plotly-plot .plotly div {
+  font-family: 'alte_haas_groteskregular';
+}
+
+.chart {
+  display: inline-block;
+  padding: 10px;
+}
+
+#num_rems_text, #reps_text {
+  display: inline-block;
+  width: 200px;
+  float: left;
+}
+
+#num_pleps_text, #lifeLOS_text {
+  display: inline-block;
+  width: 200px;
+  float: right;
+}
+```
