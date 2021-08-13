@@ -5,17 +5,18 @@ output: html_document
 ---
 
 <link rel="stylesheet" type="text/css" href="fonts/stylesheet.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 ```{r setup, include=FALSE}
 library(knitr)
 source_dir <- source("native.R")
 ```
 
-**Question asked:** What are the outcome differences for Native American children in foster care in Clark County?  To answer this, four criteria were examined: number of removals, number of placements, frequency of returning to foster care, and length of stay in foster care.
+**Question asked:** What are the outcome differences for Native American children in foster care in Clark county?  To answer this, four criteria were examined: number of removals, number of placements, frequency of returning to foster care, and length of stay in foster care.
 
 ## About the Sample
 
-The data used was provided by the National Data Archive on Child Abuse and Neglect at Cornell University.  In 2019, Clark county had **`r total_kids`** kids in foster care, if whom **`r native_kids`** were Native American, and **`r non_native_kids`** were not.  This includes all children who were ever in any out of home placement in 2019.  Time spent in foster care includes all time out of home for each child, including previous years in care.
+The data used was provided by the National Data Archive on Child Abuse and Neglect at Cornell University.  In 2019, Clark county had **`r total_kids`** kids in foster care, of whom **`r native_kids`** were Native American, and **`r non_native_kids`** were not.  This includes all children who were ever in any out of home placement in 2019.  Time spent in foster care includes all time out of home for each child, including previous years in care.
 
 ## Number Of Placements
 <p id="num_pleps_text">
